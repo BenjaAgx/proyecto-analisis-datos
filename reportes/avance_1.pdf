@@ -1,0 +1,55 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1180 >>
+stream
+BT
+/F1 18 Tf
+72 740 Td
+(Proyecto: Evolucion del Turismo Nacional e Internacional) Tj
+0 -28 Td
+/F1 12 Tf
+(Universidad de Chile) Tj
+0 -20 Td
+(Asignatura: Analisis de Datos y Visualizacion) Tj
+0 -20 Td
+(Fecha: 24 de octubre de 2026) Tj
+0 -20 Td
+(Repositorio: https://github.com/enzoillanes6-art/proyecto-analisis-datos) Tj
+0 -40 Td
+/F1 13 Tf
+(Resumen del avance 1) Tj
+0 -20 Td
+/F1 10 Tf
+(Se presenta la estructura base del proyecto y la carga inicial de datos.) Tj
+0 -16 Td
+(Se documenta la fuente de datos, variables y pipeline propuesto.) Tj
+0 -16 Td
+(El siguiente paso sera la limpieza, analisis exploratorio y proyeccion.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000063 00000 n 
+0000000122 00000 n 
+0000000806 00000 n 
+0000001962 00000 n 
+trailer
+<< /Root 1 0 R /Size 6 >>
+startxref
+2034
+%%EOF
