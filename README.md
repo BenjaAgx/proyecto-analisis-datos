@@ -1,13 +1,12 @@
 # Evolución del Turismo Nacional e Internacional
 
 ## Portada
-- Institución: Universidad de Chile
-- Asignatura: Análisis de Datos y Visualización
+- Institución: Universidad Autonoma
+- Curso: Programación Avanzada
 - Título del proyecto: Evolución del Turismo Nacional e Internacional
-- Nombre de los integrantes: Enzo Illanes y equipo
-- Curso: Curso de análisis de datos
-- Docente: Profesor responsable
-- Fecha de entrega: 24 de octubre de 2026
+- Nombre de los integrantes: Enzo Illanes, Benjamin Aguayo y Jaime Panguinao
+- Docente: Alex Flores Fuentealba
+- Fecha de entrega: 27 de octubre de 2026
 - Enlace al repositorio: https://github.com/enzoillanes6-art/proyecto-analisis-datos
 
 ## Descripción del problema
