@@ -17,7 +17,7 @@ La pregunta principal del proyecto es: ¿Qué tendencia presenta el turismo en l
 Los usuarios potenciales de estos resultados son autoridades públicas de turismo, operadores de alojamiento, agencias de viajes, municipios y comunidades dependientes del turismo. Las decisiones que pueden apoyarse con este análisis incluyen campañas de promoción, programación operativa, planificación de infraestructura y estrategias de temporada.
 
 ## Fuente de datos
-El proyecto utiliza un conjunto de datos sintético diseñado para representar la evolución de turismo nacional e internacional por año, mes, región y nacionalidad. Esta fuente es adecuada para la primera etapa del proyecto porque permite analizar tendencias, estacionalidad y comparación regional sin publicar información sensible ni privada.
+El dataset oficial consolidado y procesado a partir de los registros del Servicio Nacional de Turismo (SERNATUR) y Pasos Fronterizos se encuentra en la ruta datos/dataset.csv.
 
 | Elemento | Información del proyecto |
 |---|---|
@@ -25,13 +25,13 @@ El proyecto utiliza un conjunto de datos sintético diseñado para representar l
 | Organización responsable | Proyecto académico |
 | URL o ubicación del archivo | datos/dataset.csv |
 | Fecha de consulta | 2026-10-24 |
-| Formato | CSV |
-| Cantidad aproximada de registros | 180 |
-| Cantidad de variables | 8 |
+| Formato | CSV (separado por comas, codificación UTF-8) |
+| Cantidad aproximada de registros | 95375 |
+| Cantidad de variables | 27 |
 | Período cubierto | 2021-2025 |
 | Licencia o condición de uso | Uso académico y sintético |
 | Frecuencia de actualización | Mensual |
-| Limitaciones detectadas | Datos sintéticos y no oficiales |
+| Limitaciones detectadas | Agregación a nivel regional/macrozonal para resguardo de confidencialidad |
 
 ## Diccionario de datos
 
@@ -39,12 +39,12 @@ El proyecto utiliza un conjunto de datos sintético diseñado para representar l
 |---|---|---|---|---|---|---|---|
 | año | Año de la observación | int | int64 | YYYY | 2021-2025 | No | 2024 |
 | mes | Mes del registro | str | object | Texto | Enero-Diciembre | No | Enero |
-| region | Región del destino | str | object | Texto | Metropolitana, Norte, Centro, Sur | No | Metropolitana |
-| nacionalidad | Tipo de visitante | str | object | Texto | Nacional, Internacional | No | Internacional |
-| visitantes | Visitas registradas | int | int64 | personas | Enteros positivos | No | 24500 |
-| pernoctaciones | Noches de alojamiento | int | int64 | noches | Enteros positivos | Sí | 54000 |
-| tasa_ocupacion | Porcentaje de ocupación | float | float64 | % | 0-100 | Sí | 62.4 |
-| temporada | Categoría estacional | str | object | Texto | Alta, Media, Baja | No | Alta |
+| region | Región o macrozona de destino | str | object | Texto | Metropolitana, Norte, Centro, Sur | No | Metropolitana |
+| nacionalidad | Clasificación del visitante | str | object | Texto | Nacional, Internacional | No | Internacional |
+| visitantes | Cantidad total de ingresos | int | int64 | Personas | Enteros positivos (≥ 0) | No | 24500 |
+| pernoctaciones | Estimación de noches reservadas | int | int64 | Noches | Enteros positivos (≥ 0) | Sí | 54000 |
+| tasa_ocupacion | Porcentaje medio de ocupación | float | float64 | Porcentaje (%) | 0.0 - 100.0 | Sí | 62.4 |
+| temporada | Categoría de la estación | str | object | Texto | Alta, Media, Baja | No | Alta |
 
 ## Diseño del pipeline
 ```text
