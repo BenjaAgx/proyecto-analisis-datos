@@ -3,5 +3,8 @@ __pycache__/
 .venv/
 venv/
 .env
-.ipynb_checkpoints/
 .DS_Store
+
+# Omitir dataset pesado
+datos/*.csv
+datos/*.xlsx
