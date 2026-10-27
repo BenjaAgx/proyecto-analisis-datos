@@ -1,25 +1,47 @@
 import pandas as pd
 
-def procesar_datos_turismo(filepath_excel, output_csv):
-    # Cargar hoja desglosada
-    df = pd.read_excel(filepath_excel, sheet_name='CONSULTA_DESAGREGADA')
-    
-    # Filtrar rango de años del proyecto (2021-2025)
-    df = df[(df['AÑO'] >= 2021) & (df['AÑO'] <= 2025)]
-    
-    # Agrupar y resumir
-    df_grouped = df.groupby(['AÑO', 'MES', 'REGION', 'REGION_01'])['SumaDeTTAS'].sum().reset_index()
-    
-    # Renombrar columnas según el Diccionario de Datos
-    df_grouped.columns = ['año', 'mes', 'region', 'nacionalidad', 'visitantes']
-    
-    # Guardar como CSV para GitHub
-    df_grouped.to_csv(output_csv, index=False, encoding='utf-8')
-    print(f"Dataset generado exitosamente en: {output_csv}")
+def cargar_datos(ruta):
+    """
+    Carga el archivo CSV con separador de punto y coma y codificacion latin-1.
+    """
+    try:
+        datos = pd.read_csv(
+            ruta, 
+            sep=';', 
+            encoding='latin-1', 
+            decimal=',', 
+            on_bad_lines='skip'
+        )
+        return datos
+    except FileNotFoundError:
+        print(f"Error: no se encontro el archivo '{ruta}'.")
+        return None
+    except Exception as e:
+        print(f"Error inesperado al cargar los datos: {e}")
+        return None
 
-if __name__ == "__main__":
-    procesar_datos_turismo('dataset(2).xlsx', 'datos/dataset.csv')
-    print("\nFilas duplicadas:")
-    print(datos.duplicated().sum())
-    print("\nResumen estadístico:")
-    print(datos.describe(include='all'))
+def inspeccionar_datos(datos):
+    """
+    Realiza la inspeccion inicial solicitada por la pauta del Avance 1.
+    """
+    if datos is None:
+        print("No hay datos para inspeccionar.")
+        return
+    
+    print("\n=== DIMENSIONES ===")
+    print(f"Filas: {datos.shape[0]:,} | Columnas: {datos.shape[1]}")
+    
+    print("\n=== COLUMNAS ===")
+    print(datos.columns.tolist())
+    
+    print("\n=== TIPOS DE DATOS ===")
+    print(datos.dtypes)
+    
+    print("\n=== PRIMEROS 5 REGISTROS ===")
+    print(datos.head())
+    
+    print("\n=== VALORES NULOS POR COLUMNA ===")
+    print(datos.isna().sum())
+    
+    print("\n=== FILAS DUPLICADAS ===")
+    print(f"Total de duplicados: {datos.duplicated().sum():,}")
