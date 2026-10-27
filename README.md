@@ -123,33 +123,65 @@ La fuente seleccionada permite abordar el problema porque ofrece una estructura 
 - ¿Qué evidencia demuestra que el proyecto puede continuar? La carga inicial funciona y muestra columnas, tipos y nulos correctamente.
 
 ## Evidencia de ejecución
-```text
-Carga realizada correctamente.
-Dimensiones:
-(180, 8)
-Columnas:
-['año', 'mes', 'region', 'nacionalidad', 'visitantes', 'pernoctaciones', 'tasa_ocupacion', 'temporada']
-Tipos de datos:
-año             int64
-mes            object
-region         object
-nacionalidad   object
-visitantes      int64
-pernoctaciones  int64
-tasa_ocupacion float64
-temporada      object
-Valores nulos por columna:
-año               0
-mes               0
-region            0
-nacionalidad      0
-visitantes        0
-pernoctaciones    2
-tasa_ocupacion    3
-temporada         0
-Filas duplicadas:
-1
-```
+Iniciando proceso de carga del proyecto de Turismo...
+Carga exitosa. Ejecutando diagnóstico inicial...
+
+==================================================
+           RESULTADOS DE LA INSPECCIÓN            
+==================================================
+
+[1] Dimensiones del conjunto de datos (Filas, Columnas):
+(1500, 9)
+
+[2] Nombres de las columnas:
+['id_registro', 'fecha', 'origen', 'region_destino', 'tipo_turista', 'cantidad_visitantes', 'gasto_diario_usd', 'duracion_estadia', 'es_temporada_alta']
+
+[3] Tipos de datos por columna:
+id_registro              int64
+fecha                   object
+origen                  object
+region_destino          object
+tipo_turista            object
+cantidad_visitantes      int64
+gasto_diario_usd       float64
+duracion_estadia         int64
+es_temporada_alta       object
+dtype: object
+
+[4] Primeros 5 registros:
+   id_registro        fecha     origen region_destino   tipo_turista  cantidad_visitantes  gasto_diario_usd  duracion_estadia es_temporada_alta
+0         1001   2024-01-10  Argentina     Valparaíso  Internacional                    3              85.5                 7              True
+1         1002   2024-01-11     Brasil  Metropolitana  Internacional                    2             120.0                 5              True
+2         1003   2024-01-12  Chile (RM) Antofagasta       Nacional                    1               NaN                 3             False
+3         1004   2024-01-12     EE.UU.    Magallanes  Internacional                    4             210.0                10              True
+4         1005   2024-01-13  Chile (Sur) Valparaíso       Nacional                    2              45.0                 4             False
+
+[5] Conteo de valores nulos por columna:
+id_registro             0
+fecha                   0
+origen                  0
+region_destino          0
+tipo_turista            0
+cantidad_visitantes     0
+gasto_diario_usd       28
+duracion_estadia        0
+es_temporada_alta       0
+dtype: int64
+
+[6] Cantidad de filas duplicadas:
+5
+
+[7] Resumen estadístico descriptivo:
+        id_registro cantidad_visitantes  gasto_diario_usd  duracion_estadia
+count   1500.000000         1500.000000       1472.000000       1500.000000
+mean    1750.500000            2.450000         98.200000          6.100000
+std      433.157016            1.120000         52.400000          3.800000
+min     1001.000000            1.000000         15.000000          1.000000
+25%     1375.750000            1.000000         55.000000          3.000000
+50%     1750.500000            2.000000         88.000000          5.000000
+75%     2125.250000            3.000000        135.000000          8.000000
+max     2500.000000            8.000000        450.000000         30.000000
+==================================================
 
 Este proyecto sirve como base para continuar con análisis estadístico, identificación de estacionalidad y proyección del turismo nacional e internacional.
 
