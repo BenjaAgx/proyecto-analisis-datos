@@ -1,37 +1,24 @@
 import pandas as pd
 
+def procesar_datos_turismo(filepath_excel, output_csv):
+    # Cargar hoja desglosada
+    df = pd.read_excel(filepath_excel, sheet_name='CONSULTA_DESAGREGADA')
+    
+    # Filtrar rango de años del proyecto (2021-2025)
+    df = df[(df['AÑO'] >= 2021) & (df['AÑO'] <= 2025)]
+    
+    # Agrupar y resumir
+    df_grouped = df.groupby(['AÑO', 'MES', 'REGION', 'REGION_01'])['SumaDeTTAS'].sum().reset_index()
+    
+    # Renombrar columnas según el Diccionario de Datos
+    df_grouped.columns = ['año', 'mes', 'region', 'nacionalidad', 'visitantes']
+    
+    # Guardar como CSV para GitHub
+    df_grouped.to_csv(output_csv, index=False, encoding='utf-8')
+    print(f"Dataset generado exitosamente en: {output_csv}")
 
-def cargar_datos(ruta):
-    """Carga un conjunto de datos desde un archivo."""
-    try:
-        datos = pd.read_csv(ruta)
-        return datos
-    except FileNotFoundError:
-        print(f"Error: no se encontró el archivo '{ruta}'.")
-    except pd.errors.EmptyDataError:
-        print("Error: el archivo no contiene datos.")
-    except pd.errors.ParserError:
-        print("Error: no fue posible interpretar el archivo.")
-    except UnicodeDecodeError:
-        print("Error: la codificación del archivo no es compatible.")
-    return None
-
-
-def inspeccionar_datos(datos):
-    if datos is None:
-        print("No existen datos disponibles para inspeccionar.")
-        return
-
-    print("\nDimensiones:")
-    print(datos.shape)
-    print("\nColumnas:")
-    print(datos.columns.tolist())
-    print("\nTipos de datos:")
-    print(datos.dtypes)
-    print("\nPrimeros registros:")
-    print(datos.head())
-    print("\nValores nulos por columna:")
-    print(datos.isna().sum())
+if __name__ == "__main__":
+    procesar_datos_turismo('dataset(2).xlsx', 'datos/dataset.csv')
     print("\nFilas duplicadas:")
     print(datos.duplicated().sum())
     print("\nResumen estadístico:")
