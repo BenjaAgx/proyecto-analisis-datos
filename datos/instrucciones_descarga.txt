@@ -1,0 +1,9 @@
+# Enlace de Descarga de Datos de Turismo
+
+El dataset principal `dataset.csv` (164 MB) excede el límite de tamaño permitido por GitHub.
+
+Para ejecutar el proyecto localmente:
+1. Descarga el archivo desde el siguiente enlace de Google Drive:
+   [ https://drive.google.com/drive/folders/1qrE3ONYkbNPavbxJ2MQ_Nfq364Wv_fwR ]
+
+2. Guarda el archivo descargado con el nombre `dataset.csv` dentro de esta carpeta (`datos/dataset.csv`).
