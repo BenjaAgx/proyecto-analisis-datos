@@ -182,6 +182,7 @@ min     1001.000000            1.000000         15.000000          1.000000
 75%     2125.250000            3.000000        135.000000          8.000000
 max     2500.000000            8.000000        450.000000         30.000000
 ==================================================
+==================================================
 
 Este proyecto sirve como base para continuar con análisis estadístico, identificación de estacionalidad y proyección del turismo nacional e internacional.
 
